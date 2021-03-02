@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:id="@+id/main_browse_fragment"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context=".MainActivity"
+>
+    <LinearLayout
+            android:id="@+id/list_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.0"
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical" >
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="100dp"
+                android:inputType="textPersonName"
+                android:text="https://www.baidu.com"
+                android:ems="10"
+                android:id="@+id/urlText"/>
+        <Button
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="200dp"
+                android:layout_marginLeft="200dp"
+                android:id="@+id/setUrl"
+                android:text="设置url地址"
+                android:background="@drawable/btn_selector"
+                android:focusable="true">
+
+        </Button>
+    </LinearLayout>
+</FrameLayout>
