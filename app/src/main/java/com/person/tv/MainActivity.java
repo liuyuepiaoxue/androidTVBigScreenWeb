@@ -34,17 +34,26 @@ public class MainActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+
         String oldUrl = getIntent().getStringExtra("url_set");
         url = assetsRead();
+
         if(url != null && url.trim().length()>0){
+
             changeAcitvity();
+
         }else{
+
             setContentView(R.layout.activity_main);
+
             if(oldUrl != null && oldUrl.trim().length()>0){
                 ((EditText)findViewById(R.id.urlText)).setText(oldUrl);
             }
+
             final Button button = findViewById(R.id.setUrl);
+
             onClickListener = new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
