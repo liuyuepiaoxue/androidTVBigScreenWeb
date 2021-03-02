@@ -28,10 +28,7 @@ public class DetailsActivity  extends Activity {
         public boolean onKey(View v, int keyCode, KeyEvent event) {
             if(keyCode == KeyEvent.KEYCODE_MENU&& event.getAction() == MotionEvent.ACTION_UP){
                 assetsWrite("");
-                Intent intent = new Intent();
-                intent.putExtra("url_set",url_set);
-                intent.setClassName("com.person.tv","com.person.tv.MainActivity");
-                startActivity(intent);
+                changeActivity(url_set);
                 return true;
             }
             if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == MotionEvent.ACTION_UP){
@@ -47,13 +44,20 @@ public class DetailsActivity  extends Activity {
         setContentView(R.layout.activity_details);
         String url = this.getIntent().getExtras().getString("url");
         if(url == null || url.trim().length() == 0){
-            setContentView(R.layout.activity_main);
+            changeActivity(url);
             return;
         }
         Log.i(""+url,url);
         showWebView(url);
         url_set = url;
         assetsWrite(url_set);
+    }
+
+    private void changeActivity(String urlSet){
+        Intent intent = new Intent();
+        intent.putExtra("url_set",urlSet);
+        intent.setClassName("com.person.tv","com.person.tv.MainActivity");
+        startActivity(intent);
     }
 
     private void showWebView(String url){
